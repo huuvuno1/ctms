@@ -1,0 +1,65 @@
+.lly-secondary-subtitle {
+    color: green !important;
+}
+
+.lly-translatable-word {
+    color: red !important;
+}
+
+.btnvin {
+    height: 38px;
+    width: 78px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    outline: none;
+}
+
+#transcript-input {
+    height: 150px !important;
+}
+
+.dash-content {
+    max-width: 1000px;
+}
+
+.lly-secondary-subtitle {
+    color: green !important;
+}
+
+.lly-translatable-word {
+    color: red !important;
+}
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 300px;
+}
+
+#customers td,
+#customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+#main-segment-form>div>div:nth-child(3)>div.col-md-6>div.h5 {
+    display: none;
+}
