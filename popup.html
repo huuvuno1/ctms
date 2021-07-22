@@ -29,12 +29,32 @@
             <th>Số lượng</th>
         </tr>
         <tr>
-            <td>Tool treo</td>
-            <td id="checked_file">0</td>
+            <td>Số file được tích đạt</td>
+            <td id="file_accept"><img style="width: 16px; height: 16px;" src="loading.gif" alt=""></td>
         </tr>
         <tr>
-            <td>Tổng</td>
-            <td id="total"><img style="width: 18px; height: 18px;" src="loading.gif" alt=""></td>
+            <td>Số file bị tích không đạt</td>
+            <td id="file_reject"><img style="width: 16px; height: 16px;" src="loading.gif" alt=""></td>
+        </tr>
+        <tr>
+            <td>Số file chưa được kiểm tra</td>
+            <td id="file_untested"><img style="width: 16px; height: 16px;" src="loading.gif" alt=""></td>
+        </tr>
+        <tr>
+            <td>Số file đã kiểm tra cho người khác</td>
+            <td id="checked_for_others"><img style="width: 16px; height: 16px;" src="loading.gif" alt=""></td>
+        </tr>
+    </table>
+
+    <h3>Nghịch</h3>
+    <table class="frame" id="customers">
+        <tr>
+            <th>Nhập user cần tìm</th>
+            <th><input type="text" style="width: 70px;" id="txtSearch"></th>
+        </tr>
+        <tr>
+            <td>Số file đã check cho user đó</td>
+            <td id="count_checked_file_user">0</td>
         </tr>
     </table>
     <script src="pop.js"></script>

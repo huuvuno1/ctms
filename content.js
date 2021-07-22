@@ -74,16 +74,33 @@ const check = async () => {
         return
     }
 
+    let hasFileReject = false;
+
     for (e of audios) {
         e.querySelector('td').click();
 
         // check xxx
         let text = e.querySelector('#segments-table > tbody > tr.selected-row > td:nth-child(3)').innerText;
 
-        if (text.includes('xxx'))
+        let eStatus = e.querySelector('td:nth-child(10)');
+        if (eStatus.innerText.includes('Không đạt')) {
+            console.log('detect reject ', document.querySelector('#review-title').innerText);
+            // click ignore
+            document.querySelector('#btSkipOver').click();
+            await sleep(2000);
+            document.querySelector('#btSkipOverGo').click();
+            check();
+            return;
+        }
+
+        if (text.includes('xxx')) {
+            hasFileReject = true;
             document.querySelector('#btReject').click();
+        }
         else
             document.querySelector('#btApprove').click();
+        
+        console.log(text,"có chứa 'xxx' hay không: ", text.includes('xxx'))
 
         let numRd = Math.floor(Math.random() * 3) + 2; 
         await sleep(numRd * 1000);
@@ -92,7 +109,13 @@ const check = async () => {
     // save
     document.querySelector('#btSubmit').click();
     await sleep(2000)
-    document.querySelector('#btApproveGo').click();
+
+    if (hasFileReject) {
+        console.log('click reject: ', document.querySelector('#review-title').innerText)
+        document.querySelector('#btRejectGo').click();
+    }
+    else
+        document.querySelector('#btApproveGo').click();
 
 
     // // update
