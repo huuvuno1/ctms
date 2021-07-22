@@ -1,2 +1,2 @@
-# vinlp-extension
-<h1>This is extension for vinlp</h1>
+
+<h1 style="color: red">This is an extension for vinlp</h1>
