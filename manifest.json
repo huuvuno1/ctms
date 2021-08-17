@@ -1,36 +1,21 @@
 {
-    "name": "Vinlp",
+    "name": "CTMS - Tín chỉ",
     "manifest_version": 2,
     "version": "0.0.1",
     "browser_action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-            "19": "a.ico",
-            "38": "a.ico"
-        }
+        "default_popup": "popup.html"
     },
     "permissions": ["activeTab", "tabs", "storage"],
     "description": "Count file has checked",
     "content_scripts": [{
         "matches": [
-            "https://sa2.vinlp.com/*",
-            "https://www.youtube.com/*"
+            "http://ctms.fithou.net.vn/DangkyLoptinchi.aspx?sid="
         ],
         "css": [
             "style.css"
         ],
         "js": [
-            "content.js",
-            "pop.js"
+            "content.js"
         ]
-    }],
-    "background": {
-        "page": "background.html",
-        "persistent": false
-    },
-    "icons": {
-        "16": "a.ico",
-        "48": "icon48.ico",
-        "128": "a.ico"
-    }
+    }]
 }
