@@ -5,7 +5,7 @@ if (location.pathname.includes("/DangkyLoptinchi.aspx")) {
         let comfirm = confirm("CLick xong đợi nó load dữ liệu nhé, đừng click nhiều")
         if (confirm) {
             document.getElementById('leftcontent').innerHTML = "<img src='/images/ajaxbar.gif' alt='Đang tải dữ liệu' title='Đang tải dữ liệu' />"
-            location.href="javascript:getSubcribleModule(); void 0;";
+            location.href="javascript:getSubcribleModule(); clearInterval(itv); void 0;";
         }
     })
     button.id = "nguyenhuuvu"
