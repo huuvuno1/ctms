@@ -42,6 +42,7 @@ if (location.pathname.includes("/DangkyLoptinchi.aspx")) {
         }
         else {
             loadMon.innerText = "Theo dõi tín";
+            song.pause()
             clearInterval(ping);
             clearInterval(checkM)
         }
