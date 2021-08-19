@@ -162,7 +162,7 @@ function createFrame() {
 
     document.querySelector('#leftcontent > table.ThongtinSV > tbody').innerHTML += `<tr id='gpa'>
                                                                                         <td>GPA hiện tại</td><td id='gpaa'> : </td>
-                                                                                        <td style="padding-left: 20px; ">Chế độ sửa điểm</td><td> : <input type="checkbox" id="edit" /> (Bạn có thể sửa điểm trong bảng)</td>
+                                                                                        <td style="padding-left: 20px; ">Chế độ sửa điểm (Bạn có thể sửa điểm trong bảng)</td><td> : <input type="checkbox" id="edit" /> </td>
                                                                                     </tr>`;
 
     let newTr1 = document.createElement('tr');
