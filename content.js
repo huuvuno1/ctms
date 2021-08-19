@@ -16,8 +16,8 @@ if (location.pathname.includes("/DangkyLoptinchi.aspx")) {
     })
     button.id = "nguyenhuuvu"
     button.innerText = "Lấy nhanh danh sách môn";
-    document.querySelector("#topbackground").innerHTML += "<br>"
     document.querySelector("#topbackground").appendChild(button);
+    document.querySelector("#topbackground").innerHTML += "<br><br>"
 
     let loadMon = document.createElement('button');
     loadMon.innerText = "Theo dõi tín";
