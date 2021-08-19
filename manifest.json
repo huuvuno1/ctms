@@ -9,7 +9,8 @@
     "description": "Count file has checked",
     "content_scripts": [{
         "matches": [
-            "http://ctms.fithou.net.vn/DangkyLoptinchi.aspx?sid="
+            "http://ctms.fithou.net.vn/**",
+            "file:///C:/Users/s2huu/Desktop/lungtung/diem3.html"
         ],
         "css": [
             "style.css"
