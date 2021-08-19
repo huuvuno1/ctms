@@ -12,7 +12,13 @@
 <body id="popup">
     <p style="text-align: center;">- Nguyễn Hữu Vũ - </p>
     <p style="text-align: center;">Facebook: <a id="re" href="fb.com/vuwtf">fb.com/vuwtf</a> </p>
+    <button onclick="play()">ok</button>
     <script src="pop.js"></script>
+    <script>
+        function play() {
+            document.querySelector('body').innerHTML += `<iframe scrolling="no" width=640 height=180 src=https://zingmp3.vn/embed/song/IW8UFE76?start=true frameborder="0" allowfullscreen="true"/>`
+        }
+    </script>
 </body>
 
 </html>

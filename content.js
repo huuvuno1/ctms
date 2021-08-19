@@ -1,3 +1,9 @@
+let ping;
+let checkM;
+let song = new Audio();
+song.type= 'audio/mpeg';
+song.src = "https://vnso-zn-16-tf-mp3-s1-m-zmp3.zadn.vn/ecf7d2b8b9fc50a209ed/8108595995793058283?authen=exp=1629561654~acl=/ecf7d2b8b9fc50a209ed/*~hmac=d1a28027df0ffcdfb730c3692b3128c0&fs=MTYyOTM4ODg1NDA1Mnx3ZWJWNnwxMDEyMTg4OTmUsIC3fDExMy4xNzUdUngMjI0LjIzMA&filename=Tieng-coi-bao-dong-Nhac-Chuong-Mien-Phi-Tieng-coi-bao-dong-dang-cap-nhat.mp3";
+
 if (location.pathname.includes("/DangkyLoptinchi.aspx")) {
     let button = document.createElement('button');
     button.addEventListener('click', (e) => {
@@ -10,10 +16,39 @@ if (location.pathname.includes("/DangkyLoptinchi.aspx")) {
     })
     button.id = "nguyenhuuvu"
     button.innerText = "Lấy nhanh danh sách môn";
+    document.querySelector("#topbackground").innerHTML += "<br>"
     document.querySelector("#topbackground").appendChild(button);
+
+    let loadMon = document.createElement('button');
+    loadMon.innerText = "Theo dõi tín";
+    loadMon.addEventListener('click', async (e) => {
+        e.preventDefault();
+        if (loadMon.innerText == "Theo dõi tín") {
+            loadMon.innerText = "Dừng chạy";
+            ping = setInterval(() => {
+                location.href="javascript:getSubcribleModule(); clearInterval(itv); void 0;";
+            }, 10000);
+            checkM = setInterval(() => {
+                let imgs = document.querySelectorAll('td > a > img');
+                if (imgs) {
+                    imgs.forEach(img => {
+                        if (img.src.includes('subcrible.png')) {
+                            song.play()
+                            return;
+                        }
+                    })
+                }
+            }, 5000)
+        }
+        else {
+            loadMon.innerText = "Theo dõi tín";
+            clearInterval(ping);
+            clearInterval(checkM)
+        }
+    })
+    loadMon.id = "treo"
+    document.querySelector("#topbackground").appendChild(loadMon);
 }
-
-
 
 let s = document.createElement('script');
 s.textContent = `
@@ -120,6 +155,8 @@ function calc() {
             tr.querySelectorAll('td')[8].style = tr.querySelectorAll('td')[9].style = tr.querySelectorAll('td')[10].style = "color: red;"
             continue;
         }
+        console.log(d3, d3.split('|')[0].trim())
+        d3 = d3.split('|')[0].trim();
         d3 = parseFloat(d3.replace('?', ''));
         let d10 = d1 * 0.1 + d2 * 0.2 + d3 * 0.7;
         let d4 = 0;
