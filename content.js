@@ -17,7 +17,16 @@ if (location.pathname.includes("/DangkyLoptinchi.aspx")) {
     button.id = "nguyenhuuvu"
     button.innerText = "Lấy nhanh danh sách môn";
     document.querySelector("#topbackground").appendChild(button);
-    document.querySelector("#topbackground").innerHTML += "<br><br>"
+    let br = document.createElement('br');
+    let br2 = document.createElement('br');
+    document.querySelector("#topbackground").appendChild(br);
+    document.querySelector("#topbackground").appendChild(br2);
+
+
+    let textbox = document.createElement('textarea');
+    textbox.id = "txtIgnore";
+    textbox.placeholder = "Nhập các môn muốn bỏ qua vào đây, mỗi môn 1 dòng"
+    document.querySelector("#topbackground").appendChild(textbox)
 
     let loadMon = document.createElement('button');
     loadMon.innerText = "Theo dõi tín";
@@ -32,7 +41,8 @@ if (location.pathname.includes("/DangkyLoptinchi.aspx")) {
                 let imgs = document.querySelectorAll('td > a > img');
                 if (imgs) {
                     imgs.forEach(img => {
-                        if (img.src.includes('subcrible.png')) {
+                        let tenMon = img.parentNode.parentNode.parentNode.querySelectorAll('td')[2].innerText.split('(')[0].trim();
+                        if (img.src.includes('subcrible.png') && !textbox.value.includes(tenMon)) {
                             song.play()
                             return;
                         }
@@ -205,7 +215,7 @@ function createFrame() {
 
     let newTr1 = document.createElement('tr');
     newTr1.innerHTML = `<tr>
-                            <td style='font-weight: bold; color: green;'>Số tính chỉ tích lũy</td><td style='font-weight: bold; color: green;' id='sotin'></td>
+                            <td style='font-weight: bold; color: green;'>Số tín chỉ tích lũy</td><td style='font-weight: bold; color: green;' id='sotin'></td>
                             <td style=""><i style=' color: red;'>(* Số tín này chưa bao gồm điểm đang chờ xác nhận nếu có)</i></td><td></td>
                         </tr>`;
     document.querySelector('#leftcontent > table.ThongtinSV > tbody').appendChild(newTr1) 
